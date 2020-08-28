@@ -1,0 +1,27 @@
+.header {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    @extend .container;
+    .header__image {
+        width: 100px;
+    }
+    .header__button {
+        background-color: transparent;
+        border: none;
+        font-size: 1.8em;
+        font-family: Neuehanskendrick-Regular;
+        position: relative;
+        &:after {
+            position: absolute;
+            content: '';
+            height: 4px;
+            bottom: -4px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: $blue;
+        }
+    }
+}

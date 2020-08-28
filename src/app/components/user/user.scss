@@ -1,0 +1,39 @@
+.user {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    align-items: center;
+    border-bottom: none;
+    width: 100%;
+    @include tablet {
+        width: 50%;
+        border-bottom: 1px solid $grayLight;
+        grid-template-columns: 13% 70%;
+        grid-template-rows: 1fr 1fr;
+    }
+    .user__avatar {
+        width: 100px;
+        border-radius: 50px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+
+        @include tablet {
+            width: 50px;
+        }
+    }
+    .user__name {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        font-size: 2.4em;
+        font-family: 'Neuehanskendrick-Light'
+    }
+    .user__posts {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        font-size: 1.8em;
+        font-family: 'Neuehanskendrick-Light';
+        color: $blue;
+    }
+}

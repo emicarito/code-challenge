@@ -1,0 +1,99 @@
+.gists {
+    @include tablet {
+        width: 50%;
+    }
+    ul {
+        list-style-type: none;
+        li {
+            border-bottom: 1px $grayLight solid;
+            padding-bottom: 2em;
+            padding-top: 2em;
+            .gists__element {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .gists__element--title {
+                    font-size: 2.4em;
+                    font-family: 'Neuehanskendrick-Light'
+                }
+                .gists__element--link {
+                    &:active {
+                        color: $blue
+                    }
+                    color: $blue;
+                    font-size: 2.4em;
+                    text-decoration: none;
+                }
+            }
+
+        }
+    }
+}
+.gistDetail {
+    background-image: url('../../../assets/background-post.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    height: auto;
+    @include tablet {
+        background-position: top right;
+        background-size: inherit;
+    }
+    .post {
+        padding-top: 5em;
+        padding-bottom: 24rem;
+        @include tablet {
+            padding-bottom: 0;
+        }
+        @extend .container;
+        h1 {
+            font-size: 45px;
+            color: $blue;
+            font-family: 'Neuehanskendrick-Light';
+            border: none;
+            width: 100%;
+            line-height: 1.3;
+            padding-bottom: 0.5em;
+            @include tablet {
+                background-position: right;
+                font-size: 90px;
+                width: 50%;
+            }
+        }
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 20%;
+            max-width: 100%;
+            @include tablet {
+
+                width: 50%;
+            }
+            h1 {
+                padding-bottom: 0.3em;
+                border-bottom: 1px solid #eaecef;
+                font-size: 2em;
+                color: #24292e;
+            }
+            pre {
+                font-size: 70%;
+            }
+        }
+        @media(max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    }
+}
+
+.gists__element--date {
+    font-size: 1em;
+    font-family: 'Neuehanskendrick-Regular'
+}
+.gists__element--ago {
+    font-size: 1em;
+    color: $blue;
+    font-family: 'Neuehanskendrick-Regular'
+}

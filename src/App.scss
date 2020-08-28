@@ -1,0 +1,13 @@
+@import './stylesheets/utlities.scss';
+@import './app/components/navbar/navbar.scss';
+@import './app/components/home/home.scss';
+@import './app/components/user/user.scss';
+@import './app/components/gist/gist.scss';
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: $white;
+    font-size: 10px;
+}
