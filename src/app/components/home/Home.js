@@ -13,20 +13,11 @@ export const Home = () => {
 
     const onUsernameChange = (e) => setUser(e.target.value)
 
-    const onSearchClicked = () => {
+    const onSearch = (event) => {
+        event.preventDefault();
         if (user) {
             dispatch(fetchUserByUsername(user));
             dispatch(getAllGistByUser(user))
-        }
-    }
-
-    const keyPress = (e) => {
-        if (e.keyCode === 13) {
-            setUser(e.target.value);
-            if (user) {
-                dispatch(fetchUserByUsername(user));
-                dispatch(getAllGistByUser(user))
-            }
         }
     }
 
@@ -35,12 +26,13 @@ export const Home = () => {
             <div className="home__content">
                 <h1>Blog msco.</h1>
                 <p>Explore the unknown. Uncover what matters. Prototype, test, repeat. Combine intuition with <br /> evidence. Design with intent and build it right.</p>
-                <div className="home__search">
+                <form className="home__search" onSubmit={onSearch}>
                     <label>
-                        <input type="text" placeholder="Keyword..." onKeyDown={keyPress} onChange={onUsernameChange} />
+                        <input type="text" placeholder="Keyword..." onChange={onUsernameChange} />
                     </label>
-                </div>
-                <button onClick={onSearchClicked}>Search</button>
+                    <button type="submit" >Search</button>
+                </form>
+
                 {userSelected.login && <User avatar={userSelected.avatar_url} name={userSelected.name}></User>}
                 {gists.length > 0 && <GistsList gists={gists}></GistsList>}
 
